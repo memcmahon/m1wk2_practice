@@ -28,4 +28,12 @@ RSpec.describe Product do
       expect(product2.total_price).to eq(9.0)
     end
   end
+
+    it 'can hoard' do
+      product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+
+      expect(product1.is_hoarded?).to eq(false)
+      product1.hoard
+      expect(product1.is_hoarded?).to eq(true)
+    end
 end
