@@ -15,6 +15,12 @@ RSpec.describe ShoppingCart do
     expect(cart.capacity).to eq(30)
   end
 
+  it 'starts with an empty cart' do
+    cart = ShoppingCart.new("King Soopers", "30items")
+
+    expect(cart.products).to eq([])
+  end
+
   it 'can add product' do
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
